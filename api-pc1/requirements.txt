@@ -1,0 +1,8 @@
+imagekitio
+flask
+pydub
+sqlalchemy < 2.0
+cryptography
+waitress
+Pillow
+pymysql

@@ -1,0 +1,30 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: mbit
+      MYSQL_DATABASE: mbit
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #command: waitress-serve --call api:create_app
+    volumes:
+      - .:/app
+      - api_data:/app/data
+    #environment:
+    # DATABASE_URL: mysql://mbit:mbit@db:3306/api
+    ports:
+      - "8080:8000"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+  api_data:
