@@ -9,5 +9,5 @@ Ficheros de la carpeta api-pc1:
 - Docker Compose:
   - docker compose up
   
-- requirements
-- Sub carpeta "api" --> implementación MVC en python
+- requirements: paquetes python necesarios
+- Sub carpeta "api": implementación MVC en python
